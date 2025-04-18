@@ -1,0 +1,155 @@
+body {
+    background: url('mapa.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Comic Sans MS', cursive;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* GRAGAS */
+  #gragas-container {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    animation: entradaGragas 4s forwards;
+    z-index: 20;
+  }
+  
+  #gragas {
+    width: 400px;
+    max-width: 90vw;
+    cursor: pointer;
+  }
+  
+  #mensagem-entrega {
+    margin-top: 10px;
+    font-size: 22px;
+    color: white;
+    background: rgba(0,0,0,0.5);
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 15px;
+  }
+  
+  
+  
+  /* CARTA */
+  .envelope {
+    width: 400px;
+    height: 300px;
+    background: #ff6f91;
+    position: relative;
+    border-radius: 10px;
+    transition: transform 1s;
+    display: none;
+    z-index: 10;
+    padding-top: 150px;
+  }
+  
+  .flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: #ff8fab;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transform-origin: top;
+  }
+  
+  /* Animação da carta */
+  .envelope.aberta .flap {
+    animation: abrirFlap 1s forwards;
+  }
+  
+  @keyframes abrirFlap {
+    0% {
+      transform: rotateX(0deg);
+    }
+    100% {
+      transform: rotateX(-180deg);
+    }
+  }
+  
+  .envelope.aberta .card {
+    animation: aparecerCarta 1s 0.5s forwards;
+    opacity: 0;
+  }
+  
+  @keyframes aparecerCarta {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .card {
+    opacity: 0;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+  }
+  
+  .card img {
+    width: 50%;
+    border-radius: 50px;
+    margin-bottom: 50px;
+    margin-top: -120px;
+  }
+  
+  /* Corações */
+  #animacao-caracteres {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 5;
+  }
+  
+  .caractere {
+    position: absolute;
+    font-size: 24px;
+    animation: subir 3s linear forwards;
+    opacity: 0.7;
+  }
+  
+  @keyframes subir {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100vh);
+      opacity: 0;
+    }
+  }
+  
+  /* Gato dançando */
+  #gif-gato {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 120px;
+    z-index: 30;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
